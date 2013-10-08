@@ -21,6 +21,7 @@ import com.person124.sm.element.Fragor;
 import com.person124.sm.element.Limbo;
 import com.person124.sm.element.Water;
 import com.person124.sm.event.EventEntityDamage;
+import com.person124.sm.event.EventFreezePotion;
 import com.person124.sm.item.ItemBasic;
 import com.person124.sm.potion.PotionFreeze;
 

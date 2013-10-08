@@ -9,7 +9,6 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.ChatMessageComponent;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
@@ -44,18 +43,28 @@ public class ItemArmorSub extends ItemArmor {
 		ItemStack boots = player.getCurrentArmor(0);
 
 		if (helmet != null && helmet.getItem() == Darkness.darkHelmet) {
-			if (player.worldObj.isRemote && !player.worldObj.canBlockSeeTheSky(MathHelper.floor_double(player.posX), MathHelper.floor_double(player.posY), MathHelper.floor_double(player.posZ))) {
-				if (player.getHealth() != 20) player.setHealth(player.getHealth() + 1);
-				if (player.isPotionActive(Potion.blindness)) player.removePotionEffect(Potion.blindness.id);
-				player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 1, 0, true));
-				is.damageItem(-1, player);
+			if (is.getItemDamage() < 11) {
+				if (player.isPotionActive(Potion.blindness.id)) player.removePotionEffect(Potion.blindness.id);
+				if (player.isPotionActive(Potion.nightVision.id)) player.removePotionEffect(Potion.nightVision.id);
+				is.setItemDamage(is.getMaxDamage());
 			}
-
-			if (player.worldObj.isRemote && player.worldObj.canBlockSeeTheSky(MathHelper.floor_double(player.posX), MathHelper.floor_double(player.posY), MathHelper.floor_double(player.posZ))) {
-				if (player.getHealth() > 2) {
-					player.setHealth(player.getHealth() - 1);
-					if (player.isPotionActive(Potion.nightVision)) player.removePotionEffect(Potion.nightVision.id);
+			PotionEffect nightVision = new PotionEffect(Potion.nightVision.id, 1, 0, true);
+			nightVision.setPotionDurationMax(true);
+			PotionEffect blind = new PotionEffect(Potion.blindness.id, 1000, 0, true);
+			blind.setPotionDurationMax(true);
+			if (world.isDaytime()) {
+				if (player.worldObj.isRemote && !player.worldObj.canBlockSeeTheSky(MathHelper.floor_double(player.posX), MathHelper.floor_double(player.posY), MathHelper.floor_double(player.posZ))) {
+					if (player.isPotionActive(Potion.blindness.id)) player.removePotionEffect(Potion.blindness.id);
+					if (!player.isPotionActive(Potion.nightVision.id)) player.addPotionEffect(nightVision);
 				}
+				if (player.worldObj.isRemote && player.worldObj.canBlockSeeTheSky(MathHelper.floor_double(player.posX), MathHelper.floor_double(player.posY), MathHelper.floor_double(player.posZ))) {
+					if (player.isPotionActive(Potion.nightVision.id)) player.removePotionEffect(Potion.nightVision.id);
+					if (!player.isPotionActive(Potion.blindness.id)) player.addPotionEffect(blind);
+				}
+			}
+			if (!world.isDaytime()) {
+				if (player.isPotionActive(Potion.blindness.id)) player.removePotionEffect(Potion.blindness.id);
+				if (!player.isPotionActive(Potion.nightVision.id)) player.addPotionEffect(nightVision);
 			}
 		}
 
