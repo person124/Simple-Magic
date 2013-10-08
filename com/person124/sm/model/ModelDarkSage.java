@@ -40,7 +40,7 @@ public class ModelDarkSage extends ModelBase {
     leg4.setPosition(0F, 1F, 0F);
 
     spincube = new ModelRenderer(8, 0);
-    spincube.addBox(-2F, -2F, -2F, 2, 2, 2);
+    spincube.addBox(-1F, -1F, -1F, 2, 2, 2);
     spincube.setPosition(0F, 9F, 0F);
 
     topblock = new ModelRenderer(8, 9);
