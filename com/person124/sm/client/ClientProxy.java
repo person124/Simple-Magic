@@ -20,6 +20,7 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityEarthSage.class, new RenderEarthSage(new ModelEarthSage(), 0.5F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLimboSage.class, new RenderLimboSage(new ModelLimboSage(), 0.5F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityWaterSage.class, new RenderWaterSage(new ModelWaterSage(), 0.5F));
+		RenderingRegistry.registerEntityRenderingHandler(EntityDarkSage.class, new RenderDarkSage(new ModelDarkSage(), 0.5F));
 	}
 
 	@Override
