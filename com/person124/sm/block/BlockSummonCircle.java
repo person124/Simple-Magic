@@ -128,6 +128,19 @@ public class BlockSummonCircle extends Block {
 					if (!world.isRemote) world.spawnEntityInWorld(sage);
 					return true;
 				}
+				if (player.inventory.getCurrentItem().itemID == Item.dyePowder.itemID) {
+					player.inventory.consumeInventoryItem(Item.dyePowder.itemID);
+					
+					double xa = x + .5;
+					double ya = y + 1;
+					double za = x + .5;
+					EntityDarkSage sage = new EntityDarkSage(world);
+					sage.setLocationAndAngles(xa, ya, za, MathHelper.wrapAngleTo180_float(world.rand.nextFloat() * 360.0F), 0.0F);
+					sage.rotationYawHead = sage.rotationYaw;
+					sage.renderYawOffset = sage.rotationYaw;
+					if (!world.isRemote) world.spawnEntityInWorld(sage);
+					return true;
+				}
 			}
 
 			return true;
