@@ -20,6 +20,7 @@ public class CommonProxy {
 		EntityRegistry.registerGlobalEntityID(EntityEarthSage.class, "sm-entity-earthsage", EntityRegistry.findGlobalUniqueEntityId());
 		EntityRegistry.registerGlobalEntityID(EntityLimboSage.class, "sm-entity-limbosage", EntityRegistry.findGlobalUniqueEntityId());
 		EntityRegistry.registerGlobalEntityID(EntityWaterSage.class, "sm-entity-watersage", EntityRegistry.findGlobalUniqueEntityId());
+		EntityRegistry.registerGlobalEntityID(EntityDarkSage.class, "sm-entity-darksage", EntityRegistry.findGlobalUnipueEntityId());
 	}
 
 	public void registerRenders() {
