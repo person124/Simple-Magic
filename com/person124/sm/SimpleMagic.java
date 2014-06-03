@@ -14,6 +14,7 @@ import com.person124.sm.block.BlockBasic;
 import com.person124.sm.block.BlockSummonCircle;
 import com.person124.sm.common.SMCommonProxy;
 import com.person124.sm.element.Earth;
+import com.person124.sm.element.Limbo;
 import com.person124.sm.item.ItemBasic;
 
 import cpw.mods.fml.common.Mod;
@@ -61,6 +62,7 @@ public class SimpleMagic {
 		proxy.init();
 		register();
 		Earth.init();
+		Limbo.init();
 	}
 
 	@EventHandler

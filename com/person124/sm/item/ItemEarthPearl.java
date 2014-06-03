@@ -16,7 +16,6 @@ public class ItemEarthPearl extends ItemBasic {
 	
 	@Override
 	public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int par4, int par5, int par6, int par7, float par8, float par9, float par10) {
-
 		if (Minecraft.getMinecraft().objectMouseOver != null) {
 			int x = Minecraft.getMinecraft().objectMouseOver.blockX;
 			int y = Minecraft.getMinecraft().objectMouseOver.blockY;

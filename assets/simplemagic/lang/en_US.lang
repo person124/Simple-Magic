@@ -1,0 +1,34 @@
+#Basic Items
+item.sm-magicdust.name=Magic Dust
+item.sm-magicorb.name=Magic Orb
+item.sm-magicingot.name=Magic Ingot
+
+#Earth Items
+item.sm-earthpearl.name=Earth Pearl
+item.sm-earthdust.name=Earth Dust
+item.sm-earthingot.name=Earth Ingot
+item.sm-earthpickaxe.name=Pickaxe of the Earth
+item.sm-eartharmor.name=Chestplate of the Earth
+
+#Limbo Items
+item.sm-limbopearl.name=Limbo Pearl
+item.sm-limbodust.name=Limbo Dust
+item.sm-limboingot.name=Limbo Ingot
+item.sm-limbospade.name=Shovel from Limbo
+
+#Basic Blocks
+tile.sm-magicblock.name=Magic Dust Block
+tile.sm-summoncircleblock.name=Summoning Square Piece - Side
+tile.sm-summoncircleblockmid.name=Summoning Square Piece - Middle
+
+#Earth Blocks
+tile.sm-earthblock.name=Earth Dust Block
+
+#Limbo Blocks
+tile.sm-curseddirt.name=Cursed Dirt
+tile.sm-cursedstone.name=Cursed Stone
+tile.sm-cursedlog.name=Cursed Log
+tile.sm-limboblock.name=Limbo Dust Block
+
+#Entities
+entity.sm-entity-earthsage.name=Earth Sage
