@@ -1,27 +1,19 @@
 package com.person124.sm.block;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.StepSound;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+
+import com.person124.sm.SimpleMagic;
 
 public class BlockBasic extends Block {
 
-	public BlockBasic(int id, Material material, String name, CreativeTabs tab, Float hard, StepSound sound, Float light, boolean unbreakable) {
-		super(id, material);
-
-		setUnlocalizedName(name);
-		setCreativeTab(tab);
+	public BlockBasic(Material material, String name, float hard, SoundType sound, String harvestTool, int harvestLvl) {
+		super(material);
+		setBlockTextureName("simplemagic:" + name);
+		setBlockName(name);
+		setCreativeTab(SimpleMagic.smTab);
 		setHardness(hard);
-		if (unbreakable) setBlockUnbreakable();
+		setStepSound(sound);
+		if (harvestTool != null) setHarvestLevel(harvestTool, harvestLvl);
 	}
-
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister par1IconRegister) {
-		blockIcon = par1IconRegister.registerIcon("simplemagic" + ":" + (this.getUnlocalizedName().substring(5)));
-	}
-
 }

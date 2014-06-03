@@ -6,7 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.MathHelper;
 
 public class ModelEarthSage extends ModelBase {
-
+	// fields
 	ModelRenderer head;
 	ModelRenderer horn1;
 	ModelRenderer horn2;

@@ -13,13 +13,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class RenderEarthSage extends RenderLiving {
-	
 	public RenderEarthSage(ModelBase par1ModelBase, float par2) {
 		super(par1ModelBase, par2);
 	}
 
 	public void renderEntityEarthSage(EntityEarthSage par1EntityEntityEarthSage, double par2, double par4, double par6, float par8, float par9) {
-		super.doRender(par1EntityEntityEarthSage, par2, par4, par6, par8, par9);
+		super.doRenderLiving(par1EntityEntityEarthSage, par2, par4, par6, par8, par9);
 	}
 
 	public void doRenderLiving(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9) {
@@ -31,8 +30,8 @@ public class RenderEarthSage extends RenderLiving {
 	}
 
 	@Override
-	protected ResourceLocation getEntityTexture(Entity var1) {
-		return new ResourceLocation("simplemagic:/textures/mob/earth_sage.png");
+	protected ResourceLocation getEntityTexture(Entity entity) {
+		ResourceLocation res = new ResourceLocation("simplemagic", "textures/entity/earth_sage.png");
+		return res;
 	}
-
 }

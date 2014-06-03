@@ -2,55 +2,48 @@ package com.person124.sm.element;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.EnumArmorMaterial;
-import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.EnumHelper;
-import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.EnumHelper;
 
+import com.person124.sm.SimpleMagic;
 import com.person124.sm.block.BlockBasic;
-import com.person124.sm.common.mod_SimpleMagic;
 import com.person124.sm.item.ItemArmorMain;
 import com.person124.sm.item.ItemBasic;
 import com.person124.sm.item.ItemBasicPickaxe;
 import com.person124.sm.item.ItemEarthPearl;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class Earth {
 
-	private static final int id = mod_SimpleMagic.earthID;
-	private static EnumArmorMaterial elemain = mod_SimpleMagic.ELEMENTMAIN;
-	private static EnumToolMaterial earthTool = EnumHelper.addToolMaterial("EARTHTOOL", 2, 500, 5.0F, 2, 100);
+	public static final ToolMaterial EARTH_TOOL_MATERIAL = EnumHelper.addToolMaterial("EARTHTOOL", 2, 500, 5.0F, 2, 100);
 
-	public static final Item earthPearl = new ItemEarthPearl(id, "sm-earthpearl", 1, mod_SimpleMagic.smTab);
-	public static final Item earthDust = new ItemBasic(id + 2, "sm-earthdust", 64, mod_SimpleMagic.smTab);
-	public static final Block earthBlock = new BlockBasic(id + 3, Material.ground, "sm-earthblock", mod_SimpleMagic.smTab, 3.0F, Block.soundMetalFootstep, 0.0F, false);
-	public static final Item earthIngot = new ItemBasic(id + 4, "sm-earthingot", 64, mod_SimpleMagic.smTab);
-	public static final Item earthChest = new ItemArmorMain(id + 5, elemain, 1, 1, "sm-eartharmor", mod_SimpleMagic.smTab);
-	public static final Item earthPick = new ItemBasicPickaxe(id + 6, earthTool, "sm-earthpickaxe", mod_SimpleMagic.smTab);
-	
-	public static void load() {
-		LanguageRegistry.addName(earthPearl, "Earth Pearl");
+	public static final Item EARTH_PEARL = new ItemEarthPearl("sm-earthpearl");
+	public static final Item EARTH_DUST = new ItemBasic("sm-earthdust", 64);
+	public static final Item EARTH_INGOT = new ItemBasic("sm-earthingot", 64);
+	public static final Item EARTH_CHESTPLATE = new ItemArmorMain(SimpleMagic.ELEMENT_MAIN_ARMOR_MATERIAL, 1, 1, "sm-eartharmor");
+	public static final Item EARTH_PICKAXE = new ItemBasicPickaxe(EARTH_TOOL_MATERIAL, "sm-earthpickaxe");
 
-		LanguageRegistry.addName(earthDust, "Earth Dust");
+	public static final Block EARTH_BLOCK = new BlockBasic(Material.ground, "sm-earthblock", 3.0F, Block.soundTypeMetal, "pickaxe", 2);
 
-		LanguageRegistry.addName(earthBlock, "Earth Dust Block");
-		MinecraftForge.setBlockHarvestLevel(earthBlock, "pickaxe", 2);
-		GameRegistry.registerBlock(earthBlock);
-		GameRegistry.addRecipe(new ItemStack(Earth.earthBlock, 1), new Object[] { "***", "***", "***", '*', new ItemStack(Earth.earthDust, 1) });
-		GameRegistry.addShapelessRecipe(new ItemStack(Earth.earthDust, 9), new ItemStack(Earth.earthBlock, 1));
-	
-		LanguageRegistry.addName(earthIngot, "Earth Ingot");
-		GameRegistry.addSmelting(Earth.earthBlock.blockID, new ItemStack(Earth.earthIngot, 1), 0.0F);
-		
-		LanguageRegistry.addName(earthChest, "Chestplate of the Earth");
-		GameRegistry.addRecipe(new ItemStack(Earth.earthChest, 1), new Object[] { "* *", "***", "***", '*', new ItemStack(Earth.earthIngot, 1) });
-	
-		LanguageRegistry.addName(earthPick, "Pickaxe of the Earth");
-		GameRegistry.addRecipe(new ItemStack(Earth.earthPick, 1), new Object[] { "***", " & ", " & ", '*', new ItemStack(Earth.earthIngot, 1), '&', new ItemStack(Item.stick, 1) });
+	public static void init() {
+		GameRegistry.registerItem(EARTH_PEARL, EARTH_PEARL.getUnlocalizedName());
+		GameRegistry.registerItem(EARTH_DUST, EARTH_DUST.getUnlocalizedName());
+		GameRegistry.registerItem(EARTH_INGOT, EARTH_INGOT.getUnlocalizedName());
+		GameRegistry.registerItem(EARTH_CHESTPLATE, EARTH_CHESTPLATE.getUnlocalizedName());
+		GameRegistry.registerItem(EARTH_PICKAXE, EARTH_PICKAXE.getUnlocalizedName());
+
+		GameRegistry.registerBlock(EARTH_BLOCK, EARTH_BLOCK.getUnlocalizedName());
+
+		GameRegistry.addSmelting(EARTH_BLOCK, new ItemStack(EARTH_INGOT, 1), 0.2F);
+		GameRegistry.addShapedRecipe(new ItemStack(EARTH_CHESTPLATE, 1), new Object[] { "! !", "!!!", "!!!", '!', new ItemStack(EARTH_INGOT, 1) });
+		GameRegistry.addShapedRecipe(new ItemStack(EARTH_PICKAXE, 1), new Object[] { "!!!", " @ ", " @ ", '!', new ItemStack(EARTH_INGOT, 1), '@', new ItemStack(Items.stick, 1) });
+
+		GameRegistry.addRecipe(new ItemStack(EARTH_BLOCK, 1), new Object[] { "!!!", "!!!", "!!!", '!', new ItemStack(EARTH_DUST, 1) });
+		GameRegistry.addShapelessRecipe(new ItemStack(EARTH_DUST, 9), new ItemStack(EARTH_BLOCK, 1));
 	}
 
 }
