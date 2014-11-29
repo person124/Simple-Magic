@@ -7,6 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
@@ -15,6 +16,7 @@ import net.minecraft.world.World;
 
 import com.person124.sm.SimpleMagic;
 import com.person124.sm.entity.EntityEarthSage;
+import com.person124.sm.entity.EntityLimboSage;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -47,11 +49,11 @@ public class BlockSummonCircle extends BlockBasic {
 
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
-		this.blockIcon[0] = iconRegister.registerIcon("simplemagic:" + "sm-summoncircleblock");
+		this.blockIcon[0] = iconRegister.registerIcon("simplemagic:" + "summoncircleblock");
 		this.blockIcon[1] = iconRegister.registerIcon("wool_colored_black");
-		this.blockIcon[2] = iconRegister.registerIcon("simplemagic:" + "sm-summoncircleblockmid");
-		this.blockIcon[3] = iconRegister.registerIcon("simplemagic:" + "sm-summoncircleedge");
-		this.blockIcon[4] = iconRegister.registerIcon("simplemagic:" + "sm-summoncircleedgemid");
+		this.blockIcon[2] = iconRegister.registerIcon("simplemagic:" + "summoncircleblockmid");
+		this.blockIcon[3] = iconRegister.registerIcon("simplemagic:" + "summoncircleedge");
+		this.blockIcon[4] = iconRegister.registerIcon("simplemagic:" + "summoncircleedgemid");
 	}
 
 	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
@@ -76,20 +78,6 @@ public class BlockSummonCircle extends BlockBasic {
 		}
 
 		if (type == 3 && world.difficultySetting.getDifficultyId() > 0 && player.inventory.getCurrentItem() != null) {
-			/*if (world.difficultySetting > 0 && player.inventory.getCurrentItem() != null) {
-				if (player.inventory.getCurrentItem().itemID == Block.dirt.blockID) {
-					player.inventory.consumeInventoryItem(Block.dirt.blockID);
-					double xa = x + .5;
-					double ya = y + 1;
-					double za = z + .5;
-
-					EntityEarthSage sage = new EntityEarthSage(world);
-					sage.initCreature();
-					sage.setPosition(xa, ya, za);
-					if (!world.isRemote) world.spawnEntityInWorld(sage);
-					return true;
-				}
-				*/
 			if (player.inventory.getCurrentItem().isItemEqual(new ItemStack(Blocks.dirt))) {
 				player.inventory.consumeInventoryItem(Item.getItemFromBlock(Blocks.dirt));
 				double xa = x + .5;
@@ -97,6 +85,17 @@ public class BlockSummonCircle extends BlockBasic {
 				double za = z + .5;
 
 				EntityEarthSage sage = new EntityEarthSage(world);
+				sage.setPosition(xa, ya, za);
+				if (!world.isRemote) world.spawnEntityInWorld(sage);
+				return true;
+			}
+			if (player.inventory.getCurrentItem().isItemEqual(new ItemStack(Items.ender_pearl))) {
+				player.inventory.consumeInventoryItem(Items.ender_pearl);
+				double xa = x + .5;
+				double ya = y + 1;
+				double za = z + .5;
+
+				EntityLimboSage sage = new EntityLimboSage(world);
 				sage.setPosition(xa, ya, za);
 				if (!world.isRemote) world.spawnEntityInWorld(sage);
 				return true;

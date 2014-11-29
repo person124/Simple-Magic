@@ -21,22 +21,22 @@ public class Earth {
 
 	public static final ToolMaterial EARTH_TOOL_MATERIAL = EnumHelper.addToolMaterial("EARTHTOOL", 2, 500, 5.0F, 2, 100);
 
-	public static final Item EARTH_PEARL = new ItemEarthPearl("sm-earthpearl");
-	public static final Item EARTH_DUST = new ItemBasic("sm-earthdust", 64);
-	public static final Item EARTH_INGOT = new ItemBasic("sm-earthingot", 64);
-	public static final Item EARTH_CHESTPLATE = new ItemArmorMain(SimpleMagic.ELEMENT_MAIN_ARMOR_MATERIAL, 1, 1, "sm-eartharmor");
-	public static final Item EARTH_PICKAXE = new ItemBasicPickaxe(EARTH_TOOL_MATERIAL, "sm-earthpickaxe");
+	public static final Item EARTH_PEARL = new ItemEarthPearl("earthpearl");
+	public static final Item EARTH_DUST = new ItemBasic("earthdust", 64);
+	public static final Item EARTH_INGOT = new ItemBasic("earthingot", 64);
+	public static final Item EARTH_CHESTPLATE = new ItemArmorMain(SimpleMagic.ELEMENT_MAIN_ARMOR_MATERIAL, 1, "eartharmor");
+	public static final Item EARTH_PICKAXE = new ItemBasicPickaxe(EARTH_TOOL_MATERIAL, "earthpickaxe");
 
-	public static final Block EARTH_BLOCK = new BlockBasic(Material.ground, "sm-earthblock", 3.0F, Block.soundTypeMetal, "pickaxe", 2);
+	public static final Block EARTH_BLOCK = new BlockBasic(Material.ground, "earthblock", 3.0F, Block.soundTypeMetal, "pickaxe", 2);
 
 	public static void init() {
-		GameRegistry.registerItem(EARTH_PEARL, EARTH_PEARL.getUnlocalizedName());
-		GameRegistry.registerItem(EARTH_DUST, EARTH_DUST.getUnlocalizedName());
-		GameRegistry.registerItem(EARTH_INGOT, EARTH_INGOT.getUnlocalizedName());
-		GameRegistry.registerItem(EARTH_CHESTPLATE, EARTH_CHESTPLATE.getUnlocalizedName());
-		GameRegistry.registerItem(EARTH_PICKAXE, EARTH_PICKAXE.getUnlocalizedName());
+		SimpleMagic.registerItem(EARTH_PEARL);
+		SimpleMagic.registerItem(EARTH_DUST);
+		SimpleMagic.registerItem(EARTH_INGOT);
+		SimpleMagic.registerItem(EARTH_CHESTPLATE);
+		SimpleMagic.registerItem(EARTH_PICKAXE);
 
-		GameRegistry.registerBlock(EARTH_BLOCK, EARTH_BLOCK.getUnlocalizedName());
+		SimpleMagic.registerBlock(EARTH_BLOCK);
 
 		GameRegistry.addSmelting(EARTH_BLOCK, new ItemStack(EARTH_INGOT, 1), 0.2F);
 		GameRegistry.addShapedRecipe(new ItemStack(EARTH_CHESTPLATE, 1), new Object[] { "! !", "!!!", "!!!", '!', new ItemStack(EARTH_INGOT, 1) });

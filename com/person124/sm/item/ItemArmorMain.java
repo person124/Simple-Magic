@@ -13,7 +13,7 @@ import com.person124.sm.element.Earth;
 
 public class ItemArmorMain extends ItemArmor {
 
-	public ItemArmorMain(ArmorMaterial material, int armorID, int typeID, String name) {
+	public ItemArmorMain(ArmorMaterial material, int typeID, String name) {
 		super(material, SimpleMagic.proxy.addArmor("sm-armor-main"), typeID);
 		setUnlocalizedName(name);
 		setMaxStackSize(1);

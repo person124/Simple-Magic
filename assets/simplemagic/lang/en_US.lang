@@ -1,34 +1,44 @@
 #Basic Items
-item.sm-magicdust.name=Magic Dust
-item.sm-magicorb.name=Magic Orb
-item.sm-magicingot.name=Magic Ingot
+item.magicdust.name=Magic Dust
+item.magicorb.name=Magic Orb
+item.magicingot.name=Magic Ingot
 
 #Earth Items
-item.sm-earthpearl.name=Earth Pearl
-item.sm-earthdust.name=Earth Dust
-item.sm-earthingot.name=Earth Ingot
-item.sm-earthpickaxe.name=Pickaxe of the Earth
-item.sm-eartharmor.name=Chestplate of the Earth
+item.earthpearl.name=Earth Pearl
+item.earthdust.name=Earth Dust
+item.earthingot.name=Earth Ingot
+item.earthpickaxe.name=Pickaxe of the Earth
+item.eartharmor.name=Chestplate of the Earth
 
 #Limbo Items
-item.sm-limbopearl.name=Limbo Pearl
-item.sm-limbodust.name=Limbo Dust
-item.sm-limboingot.name=Limbo Ingot
-item.sm-limbospade.name=Shovel from Limbo
+item.limbopearl.name=Limbo Pearl
+item.limbodust.name=Limbo Dust
+item.limboingot.name=Limbo Ingot
+item.limbospade.name=Shovel from Limbo
+item.limboarmor.name=Leggings from Limbo
+
+#Fire Items
+item.firepearl.name=Fire Pearl
+item.firedust.name=Fire Dust
+item.fireingot.name=Fire Ingot
 
 #Basic Blocks
-tile.sm-magicblock.name=Magic Dust Block
-tile.sm-summoncircleblock.name=Summoning Square Piece - Side
-tile.sm-summoncircleblockmid.name=Summoning Square Piece - Middle
+tile.magicblock.name=Magic Dust Block
+tile.summoncircleblock.name=Summoning Square Piece - Side
+tile.summoncircleblockmid.name=Summoning Square Piece - Middle
 
 #Earth Blocks
-tile.sm-earthblock.name=Earth Dust Block
+tile.earthblock.name=Earth Dust Block
 
 #Limbo Blocks
-tile.sm-curseddirt.name=Cursed Dirt
-tile.sm-cursedstone.name=Cursed Stone
-tile.sm-cursedlog.name=Cursed Log
-tile.sm-limboblock.name=Limbo Dust Block
+tile.curseddirt.name=Cursed Dirt
+tile.cursedstone.name=Cursed Stone
+tile.cursedlog.name=Cursed Log
+tile.limboblock.name=Limbo Dust Block
+
+#Fire Blocks
+tile.fireblock.name=Fire Block
 
 #Entities
-entity.sm-entity-earthsage.name=Earth Sage
+entity.earthsage.name=Earth Sage
+entity.limbosage.name=Limbo Sage

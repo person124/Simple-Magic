@@ -30,10 +30,10 @@ public class BlockCursed extends BlockBasic {
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerBlockIcons(IIconRegister iconRegister) {
-		blockIcon[0] = iconRegister.registerIcon("simplemagic:sm-curseddirt");
-		blockIcon[1] = iconRegister.registerIcon("simplemagic:sm-cursedstone");
-		blockIcon[2] = iconRegister.registerIcon("simplemagic:sm-cursedlog");
-		blockIcon[3] = iconRegister.registerIcon("simplemagic:sm-cursedlog_top");
+		blockIcon[0] = iconRegister.registerIcon("simplemagic:curseddirt");
+		blockIcon[1] = iconRegister.registerIcon("simplemagic:cursedstone");
+		blockIcon[2] = iconRegister.registerIcon("simplemagic:cursedlog");
+		blockIcon[3] = iconRegister.registerIcon("simplemagic:cursedlog_top");
 	}
 
 	@SideOnly(Side.CLIENT)

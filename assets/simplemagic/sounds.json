@@ -1,0 +1,50 @@
+{
+    "mob.earthsage.say":
+    {
+        "category": "hostile",
+        "sounds":
+        [
+            "mob/earthsage/say"
+        ]
+    },
+    "mob.earthsage.hurt":
+    {
+        "category": "hostile",
+        "sounds":
+        [
+            "mob/earthsage/hurt"
+        ]
+    },
+    "mob.earthsage.death":
+    {
+        "category": "hostile",
+        "sounds":
+        [
+            "mob/earthsage/death"
+        ]
+    },
+    "mob.limbosage.say":
+    {
+        "category": "hostile",
+        "sounds":
+        [
+            "mob/limbosage/say"
+        ]
+    },
+    "mob.limbosage.hurt":
+    {
+        "category": "hostile",
+        "sounds":
+        [
+            "mob/limbosage/hurt"
+        ]
+    },
+    "mob.limbosage.death":
+    {
+        "category": "hostile",
+        "sounds":
+        [
+            "mob/limbosage/death"
+        ]
+    }
+}
