@@ -16,6 +16,7 @@ import net.minecraft.world.World;
 
 import com.person124.sm.SimpleMagic;
 import com.person124.sm.entity.EntityEarthSage;
+import com.person124.sm.entity.EntityFireSage;
 import com.person124.sm.entity.EntityLimboSage;
 
 import cpw.mods.fml.relauncher.Side;
@@ -23,9 +24,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockSummonCircle extends BlockBasic {
 
-	@SideOnly(Side.CLIENT)
-	private IIcon[] blockIcon = new IIcon[5];
 	private int type;
+	//@SideOnly(Side.CLIENT)
+	private IIcon[] blockIcon = new IIcon[5];
 
 	public BlockSummonCircle(String name, int type) {
 		super(Material.cloth, name, 0.8F, Block.soundTypeCloth, null, 0);
@@ -96,6 +97,17 @@ public class BlockSummonCircle extends BlockBasic {
 				double za = z + .5;
 
 				EntityLimboSage sage = new EntityLimboSage(world);
+				sage.setPosition(xa, ya, za);
+				if (!world.isRemote) world.spawnEntityInWorld(sage);
+				return true;
+			}
+			if (player.inventory.getCurrentItem().isItemEqual(new ItemStack(Items.fire_charge))) {
+				player.inventory.consumeInventoryItem(Items.fire_charge);
+				double xa = x + .5;
+				double ya = y + 1;
+				double za = z + .5;
+
+				EntityFireSage sage = new EntityFireSage(world);
 				sage.setPosition(xa, ya, za);
 				if (!world.isRemote) world.spawnEntityInWorld(sage);
 				return true;

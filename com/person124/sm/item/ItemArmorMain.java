@@ -56,7 +56,7 @@ public class ItemArmorMain extends ItemArmor {
 		if (is.itemID == Fire.fireLegs.itemID) {
 			return "/person124/sm/textures/armor/EleMain_2.png";
 		}*/
-		return "simplemagic:/textures/armor/EleMain_1.png";
+		return "simplemagic:textures/armor/EleMain_1.png";
 	}
 
 }

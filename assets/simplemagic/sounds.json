@@ -46,5 +46,29 @@
         [
             "mob/limbosage/death"
         ]
+    },
+    "mob.firesage.say":
+    {
+        "category": "hostile",
+        "sounds":
+        [
+            "mob/firesage/say"
+        ]
+    },
+    "mob.firesage.hurt":
+    {
+        "category": "hostile",
+        "sounds":
+        [
+            "mob/firesage/hurt"
+        ]
+    },
+    "mob.firesage.death":
+    {
+        "category": "hostile",
+        "sounds":
+        [
+            "mob/firesage/death"
+        ]
     }
 }

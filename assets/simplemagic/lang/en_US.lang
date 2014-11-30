@@ -37,8 +37,9 @@ tile.cursedlog.name=Cursed Log
 tile.limboblock.name=Limbo Dust Block
 
 #Fire Blocks
-tile.fireblock.name=Fire Block
+tile.fireblock.name=Fire Dust Block
 
 #Entities
 entity.earthsage.name=Earth Sage
 entity.limbosage.name=Limbo Sage
+entity.firesage.name=Fire Sage

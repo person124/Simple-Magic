@@ -32,7 +32,7 @@ public class RenderEarthSage extends RenderLiving {
 
 	@Override
 	protected ResourceLocation getEntityTexture(Entity var1) {
-		return new ResourceLocation("simplemagic:/textures/mob/earthsage.png");
+		return new ResourceLocation("simplemagic", "textures/mob/earthsage.png");
 	}
 
 }

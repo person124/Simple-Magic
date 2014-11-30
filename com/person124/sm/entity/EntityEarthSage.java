@@ -24,6 +24,7 @@ public class EntityEarthSage extends EntityMob {
 		this.setSize(0.6F, 1.8F);
 		this.setHealth(30F);
 		this.setMoveForward(0.46F);
+		this.experienceValue = 5;
 
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityPlayer.class, 0.46D, false));

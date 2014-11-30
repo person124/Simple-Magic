@@ -18,7 +18,7 @@ public class BlockCursed extends BlockBasic {
 
 	private boolean slow = false;
 	private int type;
-	@SideOnly(Side.CLIENT)
+	//@SideOnly(Side.CLIENT)
 	private IIcon[] blockIcon = new IIcon[4];
 
 	public BlockCursed(String name, int type) {

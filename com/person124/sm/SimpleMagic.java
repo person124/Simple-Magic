@@ -29,7 +29,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "simplemagic", name = "Simple Magic", version = "0.1.0")
+@Mod(modid = "simplemagic", name = "Simple Magic", version = "0.1.25")
 public class SimpleMagic {
 
 	@Instance("simplemagic")
@@ -59,6 +59,7 @@ public class SimpleMagic {
 		event.getModMetadata().credits = "Thank you ThirstBuster on PMC for some of the textures.";
 		event.getModMetadata().authorList.add("person124");
 		event.getModMetadata().description = "Magic is Simple, is it not?";
+		event.getModMetadata().logoFile = "assets/simplemagic/textures/logo.png";
 		
 		MinecraftForge.EVENT_BUS.register(new EventEntityDammage());
 	}

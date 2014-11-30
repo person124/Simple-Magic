@@ -15,12 +15,8 @@ public class ItemEarthPearl extends ItemBasic {
 	}
 	
 	@Override
-	public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int par4, int par5, int par6, int par7, float par8, float par9, float par10) {
-		if (Minecraft.getMinecraft().objectMouseOver != null) {
-			int x = Minecraft.getMinecraft().objectMouseOver.blockX;
-			int y = Minecraft.getMinecraft().objectMouseOver.blockY;
-			int z = Minecraft.getMinecraft().objectMouseOver.blockZ;
-
+	public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10) {
+		if (world.getBlock(x, y, z) != Blocks.air) {
 			if (world.getBlock(x, y, z) == Blocks.stone) {
 				if (!world.isRemote) world.func_147480_a(x, y, z, false);
 				player.inventory.addItemStackToInventory(new ItemStack(Earth.EARTH_DUST, 1));

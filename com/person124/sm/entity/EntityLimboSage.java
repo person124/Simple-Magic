@@ -29,6 +29,7 @@ public class EntityLimboSage extends EntityMob {
 		this.setSize(0.6F, 1.8F);
 		this.setHealth(30F);
 		this.setMoveForward(0.75F);
+		this.experienceValue = 20;
 		
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityPlayer.class, 0.46D, false));
@@ -71,6 +72,7 @@ public class EntityLimboSage extends EntityMob {
 		EntityPlayer entity = (EntityPlayer) e;
 		entity.addPotionEffect(new PotionEffect(Potion.poison.getId(), 160, 0));
 		entity.heal(-0.5F);
+		this.heal(0.5F);
 		return true;
 	}
 	

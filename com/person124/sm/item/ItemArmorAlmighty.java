@@ -31,7 +31,7 @@ public class ItemArmorAlmighty extends ItemArmor {
 	
 	@Override
 	public String getArmorTexture(ItemStack is, Entity entity, int slot, String type) {
-		return "simplemagic:/textures/armor/EleAlm_2.png";
+		return "simplemagic:textures/armor/EleAlm_2.png";
 	}
 
 }

@@ -41,5 +41,10 @@ public class ItemLimboSpade extends ItemSpade {
 
 		return true;
 	}
+	
+	@Override
+	public boolean getIsRepairable(ItemStack p_82789_1_, ItemStack p_82789_2_) {
+		return false;
+	}
 
 }

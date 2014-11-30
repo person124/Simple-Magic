@@ -17,12 +17,8 @@ public class ItemLimboPearl extends ItemBasic {
 	}
 
 	@Override
-	public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int par4, int par5, int par6, int par7, float par8, float par9, float par10) {
-		if (Minecraft.getMinecraft().objectMouseOver != null) {
-			int x = Minecraft.getMinecraft().objectMouseOver.blockX;
-			int y = Minecraft.getMinecraft().objectMouseOver.blockY;
-			int z = Minecraft.getMinecraft().objectMouseOver.blockZ;
-
+	public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int x, int y, int z, int par7, float par8, float par9, float par10) {
+		if (world.getBlock(x, y, z) != Blocks.air) {
 			if (world.getBlock(x, y, z) == Blocks.dirt || world.getBlock(x, y, z) == Blocks.grass) {
 				if (!world.isRemote) world.setBlock(x, y, z, Limbo.CURSED_DIRT, 0, 2);
 				if (!slow) world.spawnParticle("hugeexplosion", x + .5, y - .5, z + .5, 0.0, 0.0, 0.0);
