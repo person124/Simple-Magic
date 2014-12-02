@@ -21,6 +21,14 @@ item.limboarmor.name=Leggings from Limbo
 item.firepearl.name=Fire Pearl
 item.firedust.name=Fire Dust
 item.fireingot.name=Fire Ingot
+item.firesword.name=Sword from the Flame
+item.firearmor.name=Leggings from the Flame
+
+#Fragor Items
+item.fragordust.name=Fragor Dust
+item.fragoringot.name=Fragor Ingot
+item.fragorsword.name=Fragor Sword
+item.fragorarmor.name=Fragor Chestplate
 
 #Basic Blocks
 tile.magicblock.name=Magic Dust Block
@@ -38,6 +46,9 @@ tile.limboblock.name=Limbo Dust Block
 
 #Fire Blocks
 tile.fireblock.name=Fire Dust Block
+
+#Fragor Blocks
+tile.fragorblock.name=Fragor Block
 
 #Entities
 entity.earthsage.name=Earth Sage

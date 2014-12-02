@@ -24,7 +24,7 @@ public class SMClientProxy extends SMCommonProxy {
 	public void registerRenderInfomation() {
 		RenderingRegistry.registerEntityRenderingHandler(EntityEarthSage.class, new RenderEarthSage(new ModelEarthSage(), 0.65F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityLimboSage.class, new RenderLimboSage(new ModelLimboSage(), 0.25F));
-		RenderingRegistry.registerEntityRenderingHandler(EntityFireSage.class, new 	RenderFireSage(new ModelFireSage(), 0.5F));
+		RenderingRegistry.registerEntityRenderingHandler(EntityFireSage.class, new RenderFireSage(new ModelFireSage(), 0.5F));
 	}
 	
 	@Override

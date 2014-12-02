@@ -1,10 +1,10 @@
 package com.person124.sm.item;
 
-import com.person124.sm.element.Fire;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
+import com.person124.sm.element.Fire;
 
 public class ItemFirePearl extends ItemBasic {
 

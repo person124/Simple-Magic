@@ -81,7 +81,6 @@ public class ModelLimboSage extends ModelBase {
 		this.head.rotateAngleX = par5 / (180F / (float) Math.PI);
 
 		float var8;
-		float var9;
 
 		if (this.onGround > -9990.0F) {
 			var8 = this.onGround;
@@ -90,8 +89,6 @@ public class ModelLimboSage extends ModelBase {
 			var8 *= var8;
 			var8 *= var8;
 			var8 = 1.0F - var8;
-			var9 = MathHelper.sin(var8 * (float) Math.PI);
-			float var10 = MathHelper.sin(this.onGround * (float) Math.PI) * -(this.head.rotateAngleX - 0.7F) * 0.75F;
 
 			this.leftarm.rotateAngleX += 0.01F;
 			this.leftarm.rotateAngleY += 0.01F;

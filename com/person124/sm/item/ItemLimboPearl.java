@@ -1,12 +1,11 @@
 package com.person124.sm.item;
 
-import com.person124.sm.element.Limbo;
-
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+
+import com.person124.sm.element.Limbo;
 
 public class ItemLimboPearl extends ItemBasic {
 

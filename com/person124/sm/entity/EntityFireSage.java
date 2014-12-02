@@ -1,24 +1,15 @@
 package com.person124.sm.entity;
 
-import com.person124.sm.element.Earth;
-import com.person124.sm.element.Fire;
-
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.monster.EntityBlaze;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntitySmallFireball;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+
+import com.person124.sm.element.Fire;
 
 public class EntityFireSage extends EntityBlaze {
 	
-	private int field_70846_g;
-
 	public EntityFireSage(World world) {
 		super(world);
 	}

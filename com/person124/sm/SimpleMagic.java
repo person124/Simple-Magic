@@ -16,6 +16,7 @@ import com.person124.sm.block.BlockSummonCircle;
 import com.person124.sm.common.SMCommonProxy;
 import com.person124.sm.element.Earth;
 import com.person124.sm.element.Fire;
+import com.person124.sm.element.Fragor;
 import com.person124.sm.element.Limbo;
 import com.person124.sm.event.EventEntityDammage;
 import com.person124.sm.item.ItemBasic;
@@ -29,9 +30,9 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "simplemagic", name = "Simple Magic", version = "0.1.25")
+@Mod(modid = "simplemagic", name = "Simple Magic", version = "0.2.0")
 public class SimpleMagic {
-
+	
 	@Instance("simplemagic")
 	public static SimpleMagic instance;
 
@@ -39,7 +40,8 @@ public class SimpleMagic {
 	public static SMCommonProxy proxy;
 
 	public static CreativeTabs smTab = new SMTab(CreativeTabs.getNextID(), "SMTab");
-	public static final ArmorMaterial ELEMENT_MAIN_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("ELEMENT_MAIN", 15, new int[] { 2, 5, 4, 1 }, 0);
+	public static ArmorMaterial ELEMENT_MINOR_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("ELEMENTMINOR", 10, new int[] { 2, 5, 4, 1 }, 0);
+	public static final ArmorMaterial ELEMENT_MAIN_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("ELEMENTMAIN", 15, new int[] { 2, 5, 4, 1 }, 0);
 	public static final ArmorMaterial ELEMENT_ALMIGHTY_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("ELEMENTALMIGHTY", 25, new int[] { 2, 5, 4, 1 }, 0);
 
 	public static final Item MAGIC_DUST = new ItemBasic("magicdust", 64);
@@ -71,6 +73,7 @@ public class SimpleMagic {
 		Earth.init();
 		Limbo.init();
 		Fire.init();
+		Fragor.init();
 	}
 
 	@EventHandler
@@ -107,8 +110,8 @@ public class SimpleMagic {
 		GameRegistry.registerBlock(block, block.getUnlocalizedName().replace("tile.", ""));
 	}
 	
-	// *Earth and Limbo
-	// Fire and Fragor(Explosive/Creeper)
+	// *Earth and *Limbo
+	// *Fire and Fragor(Explosive/Creeper)
 	// Water and Darkness
 	// Time and Air
 	// Life and Porcus(Pig)

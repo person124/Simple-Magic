@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import com.person124.sm.SimpleMagic;
+import com.person124.sm.element.Limbo;
 
 public class ItemLimboSpade extends ItemSpade {
 
@@ -20,7 +21,7 @@ public class ItemLimboSpade extends ItemSpade {
 		setMaxStackSize(1);
 		setTextureName("simplemagic:" + name);
 	}
-	
+
 	public boolean onBlockDestroyed(ItemStack is, World world, Block block, int x, int y, int z, EntityLivingBase entityLiving) {
 		is.damageItem(1, entityLiving);
 
@@ -35,15 +36,21 @@ public class ItemLimboSpade extends ItemSpade {
 			if (world.getBlock(x, y, z) == Blocks.lapis_ore) player.inventory.addItemStackToInventory(new ItemStack(Items.dye, 10, 4));
 			if (world.getBlock(x, y, z) == Blocks.quartz_ore) player.inventory.addItemStackToInventory(new ItemStack(Items.quartz, 5));
 			if (world.getBlock(x, y, z) == Blocks.redstone_ore) player.inventory.addItemStackToInventory(new ItemStack(Items.redstone, 10));
-			
+
 			is.damageItem(19, entityLiving);
 		}
 
 		return true;
 	}
+
+	@Override
+	public boolean getIsRepairable(ItemStack is, ItemStack other) {
+		if (other.getItem() == Limbo.LIMBO_INGOT) return true;
+		return false;
+	}
 	
 	@Override
-	public boolean getIsRepairable(ItemStack p_82789_1_, ItemStack p_82789_2_) {
+	public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
 		return false;
 	}
 
