@@ -58,7 +58,7 @@ public class ItemArmorMain extends ItemArmor {
 		}
 		return "simplemagic:textures/armor/EleMain_1.png";
 	}
-	
+
 	@Override
 	public boolean getIsRepairable(ItemStack is, ItemStack other) {
 		return false;

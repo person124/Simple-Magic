@@ -9,6 +9,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
+import com.person124.sm.element.Life;
 import com.person124.sm.element.Limbo;
 
 import cpw.mods.fml.relauncher.Side;
@@ -87,6 +88,8 @@ public class BlockCursed extends BlockBasic {
 				int xa = x + par5Random.nextInt(3) - 1;
 				int ya = y + par5Random.nextInt(5) - 3;
 				int za = z + par5Random.nextInt(3) - 1;
+				
+				if (world.getBlock(xa, ya, za) == Life.LIFE_BLOCK) world.setBlockToAir(x, y, z);
 
 				if (world.getBlock(xa, ya, za) == Blocks.dirt || world.getBlock(xa, ya, za) == Blocks.grass) {
 					world.setBlock(xa, ya, za, Limbo.CURSED_DIRT, 0, 2);

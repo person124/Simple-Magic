@@ -14,7 +14,7 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
-import com.person124.sm.SimpleMagic;
+import com.person124.sm.element.Base;
 import com.person124.sm.entity.EntityEarthSage;
 import com.person124.sm.entity.EntityFireSage;
 import com.person124.sm.entity.EntityLimboSage;
@@ -70,7 +70,7 @@ public class BlockSummonCircle extends BlockBasic {
 					if (i > 0) za = i - 1;
 					if (u == 0) xb = 1;
 					if (i == 0) zb = 1;
-					if (world.getBlock(x + xa - xb, y, z + za - zb) == SimpleMagic.SUMMON_CIRCLE) many += 1;
+					if (world.getBlock(x + xa - xb, y, z + za - zb) == Base.SUMMON_CIRCLE) many += 1;
 					if (many == 8) levelUp(world, x, y, z, player);
 					if (i == 2 && u == 2) many = 0;
 				}
@@ -128,10 +128,10 @@ public class BlockSummonCircle extends BlockBasic {
 				if (i > 0) za = i - 1;
 				if (u == 0) xb = 1;
 				if (i == 0) zb = 1;
-				world.setBlock(x + xa - xb, y, z + za - zb, SimpleMagic.SUMMON_CIRCLE_EDGE);
+				world.setBlock(x + xa - xb, y, z + za - zb, Base.SUMMON_CIRCLE_EDGE);
 				world.setBlock(x + xa - xb, y + 1, z + za - zb, Blocks.air);
 				world.setBlock(x + xa - xb, y + 2, z + za - zb, Blocks.air);
-				world.setBlock(x, y, z, SimpleMagic.SUMMON_CIRCLE_EDGE_MIDDLE);
+				world.setBlock(x, y, z, Base.SUMMON_CIRCLE_EDGE_MIDDLE);
 			}
 		}
 	}
@@ -146,7 +146,7 @@ public class BlockSummonCircle extends BlockBasic {
 	public void onBlockDestroyedByPlayer(World world, int x, int y, int z, int par5) {
 
 		if (type == 2) {
-			world.setBlock(x, y, z, SimpleMagic.SUMMON_CIRCLE_EDGE);
+			world.setBlock(x, y, z, Base.SUMMON_CIRCLE_EDGE);
 		}
 
 		if (type == 3) {
@@ -160,16 +160,16 @@ public class BlockSummonCircle extends BlockBasic {
 					if (i > 0) za = i - 1;
 					if (u == 0) xb = 1;
 					if (i == 0) zb = 1;
-					world.setBlock(x + xa - xb, y, z + za - zb, SimpleMagic.SUMMON_CIRCLE);
-					world.setBlock(x, y, z, SimpleMagic.SUMMON_CIRCLE_MIDDLE);
-					if (world.getBlock(x + xa - xb, y, z + za - zb) == SimpleMagic.SUMMON_CIRCLE) world.func_147480_a(x + xa - xb, y, z + za - zb, true);
+					world.setBlock(x + xa - xb, y, z + za - zb, Base.SUMMON_CIRCLE);
+					world.setBlock(x, y, z, Base.SUMMON_CIRCLE_MIDDLE);
+					if (world.getBlock(x + xa - xb, y, z + za - zb) == Base.SUMMON_CIRCLE) world.func_147480_a(x + xa - xb, y, z + za - zb, true);
 				}
 			}
 		}
 	}
 
 	public void onBlockDestroyedByExplosion(World world, int x, int y, int z, Explosion par5Explosion) {
-		if (type == 2) world.setBlock(x, y, z, SimpleMagic.SUMMON_CIRCLE_EDGE);
+		if (type == 2) world.setBlock(x, y, z, Base.SUMMON_CIRCLE_EDGE);
 
 		if (type == 3) {
 			for (int i = 0; i < 3; i++) {
@@ -182,9 +182,9 @@ public class BlockSummonCircle extends BlockBasic {
 					if (i > 0) za = i - 1;
 					if (u == 0) xb = 1;
 					if (i == 0) zb = 1;
-					world.setBlock(x + xa - xb, y, z + za - zb, SimpleMagic.SUMMON_CIRCLE);
-					world.setBlock(x, y, z, SimpleMagic.SUMMON_CIRCLE_MIDDLE);
-					if (world.getBlock(x + xa - xb, y, z + za - zb) == SimpleMagic.SUMMON_CIRCLE) world.func_147480_a(x + xa - xb, y, z + za - zb, true);
+					world.setBlock(x + xa - xb, y, z + za - zb, Base.SUMMON_CIRCLE);
+					world.setBlock(x, y, z, Base.SUMMON_CIRCLE_MIDDLE);
+					if (world.getBlock(x + xa - xb, y, z + za - zb) == Base.SUMMON_CIRCLE) world.func_147480_a(x + xa - xb, y, z + za - zb, true);
 				}
 			}
 		}

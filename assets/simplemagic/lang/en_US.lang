@@ -1,6 +1,6 @@
 #Basic Items
 item.magicdust.name=Magic Dust
-item.magicorb.name=Magic Orb
+item.magicorb.name=Inert Magic Orb
 item.magicingot.name=Magic Ingot
 
 #Earth Items
@@ -9,6 +9,8 @@ item.earthdust.name=Earth Dust
 item.earthingot.name=Earth Ingot
 item.earthpickaxe.name=Pickaxe of the Earth
 item.eartharmor.name=Chestplate of the Earth
+item.earthorb.name=Inert Earth Orb
+item.earthgem.name=Gem of the Earth
 
 #Limbo Items
 item.limbopearl.name=Limbo Pearl
@@ -30,6 +32,10 @@ item.fragoringot.name=Fragor Ingot
 item.fragorsword.name=Fragor Sword
 item.fragorarmor.name=Fragor Chestplate
 
+#Life Items
+item.lifedust.name=Vie de Poudre
+item.lifeingot.name=Vie de Lingot
+
 #Basic Blocks
 tile.magicblock.name=Magic Dust Block
 tile.summoncircleblock.name=Summoning Square Piece - Side
@@ -37,6 +43,7 @@ tile.summoncircleblockmid.name=Summoning Square Piece - Middle
 
 #Earth Blocks
 tile.earthblock.name=Earth Dust Block
+tile.earthgemblock.name=Block of Earth Gems
 
 #Limbo Blocks
 tile.curseddirt.name=Cursed Dirt
@@ -49,6 +56,9 @@ tile.fireblock.name=Fire Dust Block
 
 #Fragor Blocks
 tile.fragorblock.name=Fragor Block
+
+#Life Blocks
+tile.lifeblock.name=Vie de Bloc
 
 #Entities
 entity.earthsage.name=Earth Sage
