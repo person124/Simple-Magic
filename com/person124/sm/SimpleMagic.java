@@ -26,7 +26,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = "simplemagic", name = "Simple Magic", version = "0.2.25")
+@Mod(modid = "simplemagic", name = "Simple Magic", version = "0.2.30")
 public class SimpleMagic {
 
 	@Instance("simplemagic")

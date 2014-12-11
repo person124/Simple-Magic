@@ -19,7 +19,7 @@ public class RenderCustomMob extends RenderLiving {
 		super(model, shadowSize);
 	}
 	
-	public void renderEntity(EntityLiving entity, double x, double y, double z, float pich, float yaw) {
+	public void renderEntity(EntityLiving entity, double x, double y, double z, float pitch, float yaw) {
 		super.doRender(entity, x, y, z, pitch, yaw);
 	}
 
@@ -28,7 +28,7 @@ public class RenderCustomMob extends RenderLiving {
 	}
 
 	public void doRender(Entity entity, double x, double y, double z, float pitch, float yaw) {
-		this.renderEntity(entity, x, y, z, pitch, yaw);
+		this.renderEntity((EntityLiving) entity, x, y, z, pitch, yaw);
 	}
 
 	@Override
@@ -36,5 +36,6 @@ public class RenderCustomMob extends RenderLiving {
 		if (e instanceof EntityEarthSage) return new ResourceLocation("simplemagic", "textures/mob/earthsage.png");
 		else if (e instanceof EntityLimboSage) return new ResourceLocation("simplemagic", "textures/mob/limbosage.png");
 		else if (e instanceof EntityFireSage) return new ResourceLocation("simplemagic", "textures/mob/firesage.png");
+		return null;
 	}
 }
