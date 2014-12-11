@@ -9,10 +9,13 @@ import net.minecraftforge.client.event.RenderPlayerEvent;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class EventPlayerCape {
 
 	@SubscribeEvent
+	@SideOnly(Side.CLIENT)
 	public void renderCapes(RenderPlayerEvent.Specials.Pre event) {
 		if (event.entityPlayer instanceof AbstractClientPlayer) {
 			AbstractClientPlayer player = (AbstractClientPlayer) event.entityPlayer;
