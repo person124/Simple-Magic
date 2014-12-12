@@ -3,6 +3,12 @@ item.magicdust.name=Magic Dust
 item.magicorb.name=Inert Magic Orb
 item.magicingot.name=Magic Ingot
 
+#Fragor Items
+item.fragordust.name=Fragor Dust
+item.fragoringot.name=Fragor Ingot
+item.fragorsword.name=Fragor Sword
+item.fragorarmor.name=Fragor Chestplate
+
 #Earth Items
 item.earthpearl.name=Earth Pearl
 item.earthdust.name=Earth Dust
@@ -12,25 +18,21 @@ item.eartharmor.name=Chestplate of the Earth
 item.earthorb.name=Inert Earth Orb
 item.earthgem.name=Gem of the Earth
 
-#Limbo Items
-item.limbopearl.name=Limbo Pearl
-item.limbodust.name=Limbo Dust
-item.limboingot.name=Limbo Ingot
-item.limbospade.name=Shovel from Limbo
-item.limboarmor.name=Leggings from Limbo
-
 #Fire Items
 item.firepearl.name=Fire Pearl
 item.firedust.name=Fire Dust
 item.fireingot.name=Fire Ingot
 item.firesword.name=Sword from the Flame
 item.firearmor.name=Leggings from the Flame
+item.fireorb.name=Inert Fire Orb
+item.firegem.name=Gem from the Flame
 
-#Fragor Items
-item.fragordust.name=Fragor Dust
-item.fragoringot.name=Fragor Ingot
-item.fragorsword.name=Fragor Sword
-item.fragorarmor.name=Fragor Chestplate
+#Limbo Items
+item.limbopearl.name=Limbo Pearl
+item.limbodust.name=Limbo Dust
+item.limboingot.name=Limbo Ingot
+item.limbospade.name=Shovel from Limbo
+item.limboarmor.name=Leggings from Limbo
 
 #Life Items
 item.lifedust.name=Vie de Poudre
@@ -41,21 +43,22 @@ tile.magicblock.name=Magic Dust Block
 tile.summoncircleblock.name=Summoning Square Piece - Side
 tile.summoncircleblockmid.name=Summoning Square Piece - Middle
 
+#Fragor Blocks
+tile.fragorblock.name=Fragor Block
+
 #Earth Blocks
 tile.earthblock.name=Earth Dust Block
 tile.earthgemblock.name=Block of Earth Gems
+
+#Fire Blocks
+tile.fireblock.name=Fire Dust Block
+tile.firegemblock.name=Block of Fire Gems
 
 #Limbo Blocks
 tile.curseddirt.name=Cursed Dirt
 tile.cursedstone.name=Cursed Stone
 tile.cursedlog.name=Cursed Log
 tile.limboblock.name=Limbo Dust Block
-
-#Fire Blocks
-tile.fireblock.name=Fire Dust Block
-
-#Fragor Blocks
-tile.fragorblock.name=Fragor Block
 
 #Life Blocks
 tile.lifeblock.name=Vie de Bloc
