@@ -44,6 +44,7 @@ public class Fire {
 		SimpleMagic.registerItem(FIRE_GEM);
 
 		SimpleMagic.registerBlock(FIRE_BLOCK);
+		SimpleMagic.registerBlock(FIRE_GEM_BLOCK);
 
 		GameRegistry.addSmelting(FIRE_BLOCK, new ItemStack(FIRE_INGOT, 1), 0.25F);
 		GameRegistry.addRecipe(new ItemStack(FIRE_SWORD, 1), new Object[] { "!", "!", "@", '!', new ItemStack(FIRE_INGOT, 1), '@', new ItemStack(Items.stick, 1) });
@@ -53,8 +54,8 @@ public class Fire {
 
 		GameRegistry.addRecipe(new ItemStack(FIRE_BLOCK, 1), new Object[] { "!!!", "!!!", "!!!", '!', new ItemStack(FIRE_DUST, 1) });
 		GameRegistry.addShapelessRecipe(new ItemStack(FIRE_DUST, 9), new ItemStack(FIRE_BLOCK, 1));
-		GameRegistry.addRecipt(new ItemStack(FIRE_GEM_BLOCK, 1), new Object[] { "!!!", "!!!", "!!!", '!', new ItemStack(FIRE_GEM, 1) });
-		GameRegistry.addShapelessRecipe(new ItemStack(FIRE_GEM, 9), new ItemStack(FIRE_DUST_BLOCK, 1));
+		GameRegistry.addRecipe(new ItemStack(FIRE_GEM_BLOCK, 1), new Object[] { "!!!", "!!!", "!!!", '!', new ItemStack(FIRE_GEM, 1) });
+		GameRegistry.addShapelessRecipe(new ItemStack(FIRE_GEM, 9), new ItemStack(FIRE_GEM_BLOCK, 1));
 	}
 
 }
