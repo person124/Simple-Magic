@@ -6,10 +6,10 @@ import net.minecraft.item.ItemFood;
 
 public class ItemBasicFood extends ItemFood {
 
-	public ItemBasicFood(String name, int hunger, float saturation) {
+	public ItemBasicFood(String name, int size, int hunger, float saturation) {
 		super(hunger, saturation, false);
 		setUnlocalizedName(name);
-		setMaxStackSize(64);
+		setMaxStackSize(size);
 		setCreativeTab(SimpleMagic.smTab);
 	}
 
