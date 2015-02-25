@@ -30,8 +30,8 @@ public class Fire {
 	public static final Item FIRE_ORB = new ItemBasic("fireorb", 64);
 	public static final Item FIRE_GEM = new ItemBasicShiny("firegem", 64);
 
-	public static final Block FIRE_BLOCK = new BlockBasic(Material.fire, "fireblock", 1.0F, Block.soundTypePiston, null, 0);
-	public static final Block FIRE_GEM_BLOCK = new BlockBasic(Material.fire, "firegemblock", 2.5F, Block.soundTypeGravel, "pickaxe", 2);
+	public static final Block FIRE_BLOCK = new BlockBasic(Material.carpet, "fireblock", 1.0F, Block.soundTypePiston, null, 0);
+	public static final Block FIRE_GEM_BLOCK = new BlockBasic(Material.iron, "firegemblock", 2.5F, Block.soundTypeGravel, "pickaxe", 2);
 
 	public static void init() {
 		SimpleMagic.registerItem(FIRE_PEARL);
@@ -49,7 +49,7 @@ public class Fire {
 		GameRegistry.addRecipe(new ItemStack(FIRE_SWORD, 1), new Object[] { "!", "!", "@", '!', new ItemStack(FIRE_INGOT, 1), '@', new ItemStack(Items.stick, 1) });
 		GameRegistry.addRecipe(new ItemStack(FIRE_LEGGINGS, 1), new Object[] { "!!!", "! !", "! !", '!', new ItemStack(FIRE_INGOT, 1) });
 		GameRegistry.addRecipe(new ItemStack(FIRE_ORB, 1), new Object[] { "!@!", "@#@", "!@!", '!', new ItemStack(FIRE_INGOT, 1), '@', new ItemStack(Blocks.glass, 1), '#', new ItemStack(FIRE_BLOCK, 1) });
-		GameRegistry.addRecipe(new ItemStack(FIRE_GEM, 1), new Object[] { "!!!", "!@!", "!!!", '!', new ItemStack(Blocks.glass, 1), '@', new ItemStack(FIRE_GEM, 1) });
+		GameRegistry.addRecipe(new ItemStack(FIRE_GEM, 1), new Object[] { "!!!", "!@!", "!!!", '!', new ItemStack(Blocks.glass, 1), '@', new ItemStack(FIRE_ORB, 1) });
 
 		GameRegistry.addRecipe(new ItemStack(FIRE_BLOCK, 1), new Object[] { "!!!", "!!!", "!!!", '!', new ItemStack(FIRE_DUST, 1) });
 		GameRegistry.addShapelessRecipe(new ItemStack(FIRE_DUST, 9), new ItemStack(FIRE_BLOCK, 1));

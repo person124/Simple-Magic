@@ -29,7 +29,7 @@ import com.person124.sm.element.Life;
 import com.person124.sm.element.Limbo;
 import com.person124.sm.event.EventEntityDammage;
 
-@Mod(modid = "simplemagic", name = "Simple Magic", version = "0.3.0")
+@Mod(modid = "simplemagic", name = "Simple Magic", version = "0.3.2")
 public class SimpleMagic {
 
 	@Instance("simplemagic")
@@ -37,9 +37,11 @@ public class SimpleMagic {
 
 	@SidedProxy(clientSide = "com.person124.sm.client.SMClientProxy", serverSide = "com.person124.sm.common.SMCommonProxy")
 	public static SMCommonProxy proxy;
-	
+
 	@SideOnly(Side.CLIENT)
 	private static RenderItem renderItem;
+	
+	private static boolean isClient;
 
 	public static CreativeTabs smTab = new SMTab(CreativeTabs.getNextID(), "SMTab");
 	public static final ArmorMaterial ELEMENT_MINOR_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("ELEMENTMINOR", "simplemagic:EleMinor", 10, new int[] { 2, 0, 4, 1 }, 0);
@@ -59,8 +61,9 @@ public class SimpleMagic {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		if (event.getSide() == Side.CLIENT) renderItem = Minecraft.getMinecraft().getRenderItem();
-		
+		isClient = event.getSide() == Side.CLIENT;
+		if (isClient) renderItem = Minecraft.getMinecraft().getRenderItem();
+
 		proxy.init();
 		Base.init();
 		Earth.init();
@@ -78,13 +81,13 @@ public class SimpleMagic {
 	public static void registerItem(Item item) {
 		String name = item.getUnlocalizedName().replace("item.", "");
 		GameRegistry.registerItem(item, name);
-    	renderItem.getItemModelMesher().register(item, 0, new ModelResourceLocation("simplemagic:" + name, "inventory"));
+		if (isClient) renderItem.getItemModelMesher().register(item, 0, new ModelResourceLocation("simplemagic:" + name, "inventory"));
 	}
-	
+
 	public static void registerBlock(Block block) {
 		String name = block.getUnlocalizedName().replace("tile.", "");
 		GameRegistry.registerBlock(block, name);
-		renderItem.getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation("simplemagic:" + name, "inventory"));
+		if (isClient) renderItem.getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation("simplemagic:" + name, "inventory"));
 	}
 
 	// *Earth and *Limbo

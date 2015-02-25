@@ -2,8 +2,6 @@ package com.person124.sm.block;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -15,10 +13,10 @@ import net.minecraft.world.World;
 
 import com.person124.sm.element.Base;
 
-public class BlockSummonCirclePower extends BlockBasic {
+public class BlockSummonCirclePower extends BlockSummonCircle {
 
 	public BlockSummonCirclePower(String name) {
-		super(Material.cloth, name, 0.8F, Block.soundTypeCloth, null, 0);
+		super(name);
 		setCreativeTab(null);
 	}
 	

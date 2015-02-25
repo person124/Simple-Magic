@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.person124.sm.SimpleMagic;
 import com.person124.sm.block.BlockBasic;
+import com.person124.sm.block.BlockSummonCircle;
 import com.person124.sm.block.BlockSummonCircleMiddle;
 import com.person124.sm.block.BlockSummonCirclePower;
 import com.person124.sm.block.BlockSummonCirclePowerMiddle;
@@ -22,7 +23,7 @@ public class Base {
 	public static final Item MAGIC_DUST_INGOT = new ItemBasic("magicingot", 64);
 
 	public static final Block MAGIC_DUST_BLOCK = new BlockBasic(Material.iron, "magicblock", 2.0F, Block.soundTypeCloth, "pickaxe", 1);
-	public static final Block SUMMON_CIRCLE = new BlockBasic(Material.cloth, "summoncircleblock", 0.8F, Block.soundTypeCloth, null, 0);
+	public static final Block SUMMON_CIRCLE = new BlockSummonCircle("summoncircleblock");
 	public static final Block SUMMON_CIRCLE_MIDDLE = new BlockSummonCircleMiddle("summoncircleblockmid");
 	public static final Block SUMMON_CIRCLE_POWER = new BlockSummonCirclePower("summoncircleedge");
 	public static final Block SUMMON_CIRCLE_POWER_MIDDLE = new BlockSummonCirclePowerMiddle("summoncircleedgemid");
@@ -45,8 +46,8 @@ public class Base {
 		GameRegistry.addRecipe(new ItemStack(MAGIC_DUST_BLOCK, 1), new Object[] { "!!!", "!!!", "!!!", '!', new ItemStack(MAGIC_DUST, 1) });
 		GameRegistry.addShapelessRecipe(new ItemStack(MAGIC_DUST, 9), new ItemStack(MAGIC_DUST_BLOCK, 1));
 		GameRegistry.addSmelting(Blocks.redstone_block, new ItemStack(MAGIC_DUST_BLOCK, 10), 6.7F);
-		GameRegistry.addRecipe(new ItemStack(SUMMON_CIRCLE, 1), new Object[] { "!!!", "!@!", "!!!", '!', new ItemStack(Blocks.wool, 1, 15), '@', new ItemStack(Items.redstone, 1) });
-		GameRegistry.addRecipe(new ItemStack(SUMMON_CIRCLE_MIDDLE, 1), new Object[] { "!@!", "!#!", "!!!", '!', new ItemStack(Blocks.wool, 1, 15), '@', new ItemStack(MAGIC_ORB, 1), '#', new ItemStack(Items.redstone, 1) });
+		GameRegistry.addRecipe(new ItemStack(SUMMON_CIRCLE, 1), new Object[] { "   ", "@@@", "!!!", '!', new ItemStack(Blocks.wool, 1, 15), '@', new ItemStack(Items.redstone, 1) });
+		GameRegistry.addRecipe(new ItemStack(SUMMON_CIRCLE_MIDDLE, 1), new Object[] { "   ", "#@#", "!!!", '!', new ItemStack(Blocks.wool, 1, 15), '@', new ItemStack(MAGIC_ORB, 1), '#', new ItemStack(Items.redstone, 1) });
 	}
 
 }

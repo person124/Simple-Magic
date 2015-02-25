@@ -2,8 +2,6 @@ package com.person124.sm.block;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,10 +20,10 @@ import com.person124.sm.entity.EntityEarthSage;
 import com.person124.sm.entity.EntityFireSage;
 import com.person124.sm.entity.EntityLimboSage;
 
-public class BlockSummonCirclePowerMiddle extends BlockBasic {
+public class BlockSummonCirclePowerMiddle extends BlockSummonCircle {
 
 	public BlockSummonCirclePowerMiddle(String name) {
-		super(Material.cloth, name, 0.8F, Block.soundTypeCloth, null, 0);
+		super(name);
 		setCreativeTab(null);
 	}
 
@@ -34,26 +32,27 @@ public class BlockSummonCirclePowerMiddle extends BlockBasic {
 		if (world.getDifficulty().getDifficultyId() > 0 && player.inventory.getCurrentItem() != null) {
 			Entity entity = null;
 
-			if (player.inventory.getCurrentItem().isItemEqual(new ItemStack(Blocks.dirt))) {
-				player.inventory.consumeInventoryItem(Item.getItemFromBlock(Blocks.dirt));
-				entity = new EntityEarthSage(world);
-			} else if (player.inventory.getCurrentItem().isItemEqual(new ItemStack(Items.ender_pearl))) {
-				player.inventory.consumeInventoryItem(Items.ender_pearl);
-				entity = new EntityLimboSage(world);
-			} else if (player.inventory.getCurrentItem().isItemEqual(new ItemStack(Items.fire_charge))) {
-				player.inventory.consumeInventoryItem(Items.fire_charge);
-				entity = new EntityFireSage(world);
-			}
+			if (hasItem(player, Item.getItemFromBlock(Blocks.dirt))) entity = new EntityEarthSage(world);
+			else if (hasItem(player, Items.ender_pearl)) entity = new EntityLimboSage(world);
+			else if (hasItem(player, Items.fire_charge)) entity = new EntityFireSage(world);
 			if (entity == null) return true;
 
 			double xa = pos.getX() + .5;
-			double ya = pos.getY() + 1;
+			double ya = pos.getY() + .5;
 			double za = pos.getZ() + .5;
 			entity.setPosition(xa, ya, za);
 			if (!world.isRemote) world.spawnEntityInWorld(entity);
 		}
 
 		return true;
+	}
+	
+	private boolean hasItem(EntityPlayer p, Item i) {
+		if (p.inventory.getCurrentItem().isItemEqual(new ItemStack(i))) {
+			p.inventory.consumeInventoryItem(i);
+			return true;
+		}
+		return false;
 	}
 
 	@Override

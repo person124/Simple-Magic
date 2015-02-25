@@ -1,7 +1,5 @@
 package com.person124.sm.block;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.BlockPos;
@@ -10,10 +8,10 @@ import net.minecraft.world.World;
 
 import com.person124.sm.element.Base;
 
-public class BlockSummonCircleMiddle extends BlockBasic {
+public class BlockSummonCircleMiddle extends BlockSummonCircle {
 
 	public BlockSummonCircleMiddle(String name) {
-		super(Material.cloth, name, 0.8F, Block.soundTypeCloth, null, 0);
+		super(name);
 	}
 
 	@Override
