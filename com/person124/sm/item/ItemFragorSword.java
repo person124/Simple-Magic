@@ -3,6 +3,7 @@ package com.person124.sm.item;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 
 public class ItemFragorSword extends ItemBasic {
@@ -18,8 +19,8 @@ public class ItemFragorSword extends ItemBasic {
 		return true;
 	}
 
-	public boolean onBlockDestroyed(ItemStack is, World world, Block block, int x, int y, int z, EntityLivingBase entity) {
-		if ((double) block.getBlockHardness(world, x, y, z) != 0.0D) is.damageItem(2, entity);
+	public boolean onBlockDestroyed(ItemStack is, World world, Block block, BlockPos pos, EntityLivingBase entity) {
+		if ((double) block.getBlockHardness(world, pos) != 0.0D) is.damageItem(2, entity);
 
 		return true;
 	}

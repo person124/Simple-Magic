@@ -6,8 +6,11 @@ import com.person124.sm.element.Limbo;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
 public class BlockLifeDust extends BlockBasic {
@@ -17,22 +20,25 @@ public class BlockLifeDust extends BlockBasic {
 		setTickRandomly(true);
 	}
 
-	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int p_149727_6_, float p_149727_7_, float p_149727_8_, float p_149727_9_) {
-		updateTick(world, x, y, z, new Random());
+	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumFacing side, float x, float y, float z) {
+		updateTick(world, pos, state, new Random());
 		return true;
 	}
 
-	public void updateTick(World world, int x, int y, int z, Random rand) {
+	@Override
+	public void updateTick(World world, BlockPos pos, IBlockState state, Random rand) {
 		for (int yp = -1; yp <= 1; yp++) {
-			int ya = yp + y;
+			int ya = pos.getY() + yp;
 			for (int xp = -1; xp <= 1; xp++) {
-				int xa = x + xp;
+				int xa = pos.getX() + xp;
 				for (int zp = -1; zp <= 1; zp++) {
-					int za = z + zp;
-					if (world.getBlock(xa, ya, za) == Blocks.dirt) world.setBlock(xa, ya, za, Blocks.grass);
-					else if (world.getBlock(xa, ya, za) == Limbo.CURSED_DIRT) world.setBlock(xa, ya, za, Blocks.grass);
-					else if (world.getBlock(xa, ya, za) == Limbo.CURSED_LOG) world.setBlock(xa, ya, za, Blocks.log);
-					else if (world.getBlock(xa, ya, za) == Limbo.CURSED_STONE) world.setBlock(xa, ya, za, Blocks.stone);
+					int za = pos.getZ() + zp;
+					
+					BlockPos p = new BlockPos(xa, ya, za);
+					if (world.getBlockState(p).getBlock() == Blocks.dirt) world.setBlockState(p, Blocks.grass.getBlockState().getBaseState());
+					else if (world.getBlockState(p) == Limbo.CURSED_BLOCK.getStateFromMeta(0)) world.setBlockState(p, Blocks.grass.getBlockState().getBaseState());
+					else if (world.getBlockState(p) == Limbo.CURSED_BLOCK.getStateFromMeta(2)) world.setBlockState(p, Blocks.log.getBlockState().getBaseState());
+					else if (world.getBlockState(p) == Limbo.CURSED_BLOCK.getStateFromMeta(1)) world.setBlockState(p, Blocks.stone.getBlockState().getBaseState());
 				}
 			}
 		}

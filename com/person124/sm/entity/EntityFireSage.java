@@ -13,6 +13,7 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -24,7 +25,6 @@ public class EntityFireSage extends EntityMob {
 	public EntityFireSage(World world) {
 		super(world);
 
-		this.getNavigator().setAvoidsWater(true);
 		this.setSize(0.6F, 1.8F);
 		this.setHealth(30F);
 		this.setMoveForward(0.46F);
@@ -37,7 +37,7 @@ public class EntityFireSage extends EntityMob {
 		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 		this.tasks.addTask(4, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true, false, null));
 	}
 
 	@Override
@@ -66,7 +66,7 @@ public class EntityFireSage extends EntityMob {
 
 	public void onLivingUpdate() {
 		if (!this.worldObj.isRemote) {
-			if (this.isInWater() || (this.worldObj.isRaining() && this.worldObj.canBlockSeeTheSky(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ)))) this.attackEntityFrom(DamageSource.drown, 5.0F);
+			if (this.isInWater() || (this.worldObj.isRaining() && this.worldObj.canBlockSeeSky(new BlockPos(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ))))) this.attackEntityFrom(DamageSource.drown, 5.0F);
 		}
 		super.onLivingUpdate();
 	}

@@ -1,8 +1,8 @@
 package com.person124.sm.item;
 
-import com.person124.sm.SimpleMagic;
-
 import net.minecraft.item.ItemFood;
+
+import com.person124.sm.SimpleMagic;
 
 public class ItemBasicFood extends ItemFood {
 

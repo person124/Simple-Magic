@@ -6,13 +6,14 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.person124.sm.SimpleMagic;
 import com.person124.sm.block.BlockBasic;
-import com.person124.sm.block.BlockSummonCircle;
+import com.person124.sm.block.BlockSummonCircleMiddle;
+import com.person124.sm.block.BlockSummonCirclePower;
+import com.person124.sm.block.BlockSummonCirclePowerMiddle;
 import com.person124.sm.item.ItemBasic;
-
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Base {
 	
@@ -21,10 +22,10 @@ public class Base {
 	public static final Item MAGIC_DUST_INGOT = new ItemBasic("magicingot", 64);
 
 	public static final Block MAGIC_DUST_BLOCK = new BlockBasic(Material.iron, "magicblock", 2.0F, Block.soundTypeCloth, "pickaxe", 1);
-	public static final Block SUMMON_CIRCLE = new BlockSummonCircle("summoncircleblock", 0);
-	public static final Block SUMMON_CIRCLE_MIDDLE = new BlockSummonCircle("summoncircleblockmid", 1);
-	public static final Block SUMMON_CIRCLE_EDGE = new BlockSummonCircle("summoncircleedge", 2);
-	public static final Block SUMMON_CIRCLE_EDGE_MIDDLE = new BlockSummonCircle("summoncircleedgemid", 3);
+	public static final Block SUMMON_CIRCLE = new BlockBasic(Material.cloth, "summoncircleblock", 0.8F, Block.soundTypeCloth, null, 0);
+	public static final Block SUMMON_CIRCLE_MIDDLE = new BlockSummonCircleMiddle("summoncircleblockmid");
+	public static final Block SUMMON_CIRCLE_POWER = new BlockSummonCirclePower("summoncircleedge");
+	public static final Block SUMMON_CIRCLE_POWER_MIDDLE = new BlockSummonCirclePowerMiddle("summoncircleedgemid");
 	
 	public static void init() {
 		SimpleMagic.registerItem(MAGIC_DUST);
@@ -34,8 +35,8 @@ public class Base {
 		SimpleMagic.registerBlock(MAGIC_DUST_BLOCK);
 		SimpleMagic.registerBlock(SUMMON_CIRCLE);
 		SimpleMagic.registerBlock(SUMMON_CIRCLE_MIDDLE);
-		SimpleMagic.registerBlock(SUMMON_CIRCLE_EDGE);
-		SimpleMagic.registerBlock(SUMMON_CIRCLE_EDGE_MIDDLE);
+		SimpleMagic.registerBlock(SUMMON_CIRCLE_POWER);
+		SimpleMagic.registerBlock(SUMMON_CIRCLE_POWER_MIDDLE);
 		
 		GameRegistry.addSmelting(Items.redstone, new ItemStack(MAGIC_DUST, 10), 1.5F);
 		GameRegistry.addRecipe(new ItemStack(MAGIC_ORB, 1), new Object[] { "!@!", "@#@", "!@!", '!', new ItemStack(MAGIC_DUST_INGOT, 1), '@', new ItemStack(Blocks.glass, 1), '#', new ItemStack(MAGIC_DUST_BLOCK, 1) });

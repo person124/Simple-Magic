@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "simplemagic:blocks/cursedlog_top",
+        "side": "simplemagic:blocks/cursedlog"
+    }
+}

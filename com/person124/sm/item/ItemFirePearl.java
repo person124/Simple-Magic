@@ -2,6 +2,8 @@ package com.person124.sm.item;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
 import com.person124.sm.element.Fire;
@@ -13,7 +15,7 @@ public class ItemFirePearl extends ItemBasic {
 	}
 
 	@Override
-	public boolean onItemUse(ItemStack itemStack, EntityPlayer player, World world, int par4, int par5, int par6, int par7, float par8, float par9, float par10) {
+	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumFacing side, float x, float y, float z) {
 		if (!player.isBurning() && !player.isInWater()) {
 			player.setFire(19);
 			player.inventory.consumeInventoryItem(Fire.FIRE_PEARL);

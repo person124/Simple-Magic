@@ -3,12 +3,11 @@ package com.person124.sm.element;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.person124.sm.SimpleMagic;
 import com.person124.sm.block.BlockLifeDust;
 import com.person124.sm.item.ItemBasic;
-
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Life {
 

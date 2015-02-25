@@ -20,7 +20,6 @@ public class EntityEarthSage extends EntityMob {
 
 	public EntityEarthSage(World world) {
 		super(world);
-		this.getNavigator().setAvoidsWater(true);
 		this.setSize(0.6F, 1.8F);
 		this.setHealth(30F);
 		this.setMoveForward(0.46F);
@@ -32,7 +31,7 @@ public class EntityEarthSage extends EntityMob {
 		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 		this.tasks.addTask(4, new EntityAILookIdle(this));
 		this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
+		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true, false, null));
 	}
 
 	@Override

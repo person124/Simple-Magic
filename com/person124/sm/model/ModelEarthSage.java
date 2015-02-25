@@ -127,9 +127,10 @@ public class ModelEarthSage extends ModelBase {
 
 		this.rightarm.rotateAngleY = 0.0F;
 		this.leftarm.rotateAngleY = 0.0F;
-		float var8;
-		float var9;
+		//float var8;
+		//float var9;
 
+		/*
 		if (this.onGround > -9990.0F) {
 			var8 = this.onGround;
 			this.body.rotateAngleY = MathHelper.sin(MathHelper.sqrt_float(var8) * (float) Math.PI * 2.0F) * 0.2F;
@@ -153,6 +154,7 @@ public class ModelEarthSage extends ModelBase {
 			this.spincube.rotateAngleY += 0.01F;
 			this.spincube.rotateAngleZ += 0.01F;
 		}
+		*/
 
 		if (this.isSneak) {
 			this.body.rotateAngleX = 0.5F;

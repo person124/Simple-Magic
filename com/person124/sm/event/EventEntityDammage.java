@@ -5,11 +5,10 @@ import java.util.Random;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import com.person124.sm.element.Fragor;
 import com.person124.sm.element.Limbo;
-
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class EventEntityDammage {
 

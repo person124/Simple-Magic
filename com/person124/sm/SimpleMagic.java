@@ -1,11 +1,24 @@
 package com.person124.sm;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.person124.sm.common.SMCommonProxy;
 import com.person124.sm.element.Base;
@@ -15,18 +28,8 @@ import com.person124.sm.element.Fragor;
 import com.person124.sm.element.Life;
 import com.person124.sm.element.Limbo;
 import com.person124.sm.event.EventEntityDammage;
-import com.person124.sm.event.EventPlayerCape;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
-
-@Mod(modid = "simplemagic", name = "Simple Magic", version = "0.2.30")
+@Mod(modid = "simplemagic", name = "Simple Magic", version = "0.3.0")
 public class SimpleMagic {
 
 	@Instance("simplemagic")
@@ -34,11 +37,14 @@ public class SimpleMagic {
 
 	@SidedProxy(clientSide = "com.person124.sm.client.SMClientProxy", serverSide = "com.person124.sm.common.SMCommonProxy")
 	public static SMCommonProxy proxy;
+	
+	@SideOnly(Side.CLIENT)
+	private static RenderItem renderItem;
 
 	public static CreativeTabs smTab = new SMTab(CreativeTabs.getNextID(), "SMTab");
-	public static final ArmorMaterial ELEMENT_MINOR_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("ELEMENTMINOR", 10, new int[] { 2, 0, 4, 1 }, 0);
-	public static final ArmorMaterial ELEMENT_MAIN_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("ELEMENTMAIN", 15, new int[] { 2, 5, 4, 1 }, 0);
-	public static final ArmorMaterial ELEMENT_ALMIGHTY_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("ELEMENTALMIGHTY", 25, new int[] { 2, 5, 4, 1 }, 0);
+	public static final ArmorMaterial ELEMENT_MINOR_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("ELEMENTMINOR", "simplemagic:EleMinor", 10, new int[] { 2, 0, 4, 1 }, 0);
+	public static final ArmorMaterial ELEMENT_MAIN_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("ELEMENTMAIN", "simplemagic:EleMain", 15, new int[] { 2, 5, 4, 1 }, 0);
+	public static final ArmorMaterial ELEMENT_ALMIGHTY_ARMOR_MATERIAL = EnumHelper.addArmorMaterial("ELEMENTALMIGHTY", "simplemagic:EleAlm", 25, new int[] { 2, 5, 4, 1 }, 0);
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -53,6 +59,8 @@ public class SimpleMagic {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+		if (event.getSide() == Side.CLIENT) renderItem = Minecraft.getMinecraft().getRenderItem();
+		
 		proxy.init();
 		Base.init();
 		Earth.init();
@@ -64,15 +72,19 @@ public class SimpleMagic {
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		MinecraftForge.EVENT_BUS.register(new EventPlayerCape());
+		//MinecraftForge.EVENT_BUS.register(new EventPlayerCape());
 	}
 
 	public static void registerItem(Item item) {
-		GameRegistry.registerItem(item, item.getUnlocalizedName().replace("item.", ""));
+		String name = item.getUnlocalizedName().replace("item.", "");
+		GameRegistry.registerItem(item, name);
+    	renderItem.getItemModelMesher().register(item, 0, new ModelResourceLocation("simplemagic:" + name, "inventory"));
 	}
-
+	
 	public static void registerBlock(Block block) {
-		GameRegistry.registerBlock(block, block.getUnlocalizedName().replace("tile.", ""));
+		String name = block.getUnlocalizedName().replace("tile.", "");
+		GameRegistry.registerBlock(block, name);
+		renderItem.getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation("simplemagic:" + name, "inventory"));
 	}
 
 	// *Earth and *Limbo
@@ -80,8 +92,8 @@ public class SimpleMagic {
 	// Life and Air
 	// Time and Darkness
 	// Water and Porcus(Pig)
-	// Space and Vacca(I think cow?)
-	// Light and Aranea(spider)
+	// Space and Vacca(Cow)
+	// Light and Aranea(Spider)
 	// Death
 
 }

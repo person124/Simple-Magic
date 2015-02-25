@@ -18,7 +18,6 @@ public class ItemFireSword extends ItemSword {
 		setCreativeTab(SimpleMagic.smTab);
 		setUnlocalizedName(name);
 		setMaxStackSize(1);
-		setTextureName("simplemagic:" + name);
 	}
 
 	public boolean hitEntity(ItemStack is, EntityLivingBase hit, EntityLivingBase self) {

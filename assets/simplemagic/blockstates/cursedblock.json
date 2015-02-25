@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=dirt":  { "model": "simplemagic:curseddirt" },
+        "type=stone": { "model": "simplemagic:cursedstone" },
+        "type=log":   { "model": "simplemagic:cursedlog" }
+    }
+}

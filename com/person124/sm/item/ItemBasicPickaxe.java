@@ -12,7 +12,6 @@ public class ItemBasicPickaxe extends ItemPickaxe {
 		setCreativeTab(SimpleMagic.smTab);
 		setUnlocalizedName(name);
 		setMaxStackSize(1);
-		setTextureName("simplemagic:" + name);
 	}
 
 	@Override

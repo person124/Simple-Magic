@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.person124.sm.SimpleMagic;
 import com.person124.sm.block.BlockBasic;
@@ -16,8 +17,6 @@ import com.person124.sm.item.ItemBasic;
 import com.person124.sm.item.ItemBasicShiny;
 import com.person124.sm.item.ItemFirePearl;
 import com.person124.sm.item.ItemFireSword;
-
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Fire {
 

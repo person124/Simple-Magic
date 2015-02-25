@@ -2,21 +2,22 @@ package com.person124.sm.render;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.person124.sm.entity.EntityEarthSage;
 import com.person124.sm.entity.EntityFireSage;
 import com.person124.sm.entity.EntityLimboSage;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 @SideOnly(Side.CLIENT)
 public class RenderCustomMob extends RenderLiving {
-	public RenderCustomMob(ModelBase model, float shadowSize) {
-		super(model, shadowSize);
+	
+	public RenderCustomMob(RenderManager render, ModelBase model, float shadowSize) {
+		super(render, model, shadowSize);
 	}
 	
 	public void renderEntity(EntityLiving entity, double x, double y, double z, float pitch, float yaw) {

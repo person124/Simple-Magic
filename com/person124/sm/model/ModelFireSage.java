@@ -65,7 +65,7 @@ public class ModelFireSage extends ModelBase {
 
 		this.rightarm.rotateAngleY = 0.0F;
 		this.leftarm.rotateAngleY = 0.0F;
-		float var8;
+		/*float var8;
 		float var9;
 
 		if (this.onGround > -9990.0F) {
@@ -91,6 +91,7 @@ public class ModelFireSage extends ModelBase {
 			this.spincube.rotateAngleY += 0.01F;
 			this.spincube.rotateAngleZ += 0.01F;
 		}
+		*/
 
 		this.rightarm.rotateAngleZ += MathHelper.cos(par3 * 0.09F) * 0.05F + 0.05F;
 		this.leftarm.rotateAngleZ -= MathHelper.cos(par3 * 0.09F) * 0.05F + 0.05F;

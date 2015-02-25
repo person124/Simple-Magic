@@ -5,7 +5,5 @@ public class ItemEarthGem extends ItemBasic {
 	public ItemEarthGem(String name, int size) {
 		super(name, size);
 	}
-	
-	
 
 }

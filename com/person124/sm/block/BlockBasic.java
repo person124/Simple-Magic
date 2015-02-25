@@ -9,8 +9,8 @@ public class BlockBasic extends Block {
 
 	public BlockBasic(Material material, String name, float hard, SoundType sound, String harvestTool, int harvestLvl) {
 		super(material);
-		setBlockTextureName("simplemagic:" + name);
-		setBlockName(name);
+		//GameRegistry.registerBlock(this, name);
+		setUnlocalizedName(name);
 		setCreativeTab(SimpleMagic.smTab);
 		setHardness(hard);
 		setStepSound(sound);

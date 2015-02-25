@@ -1,0 +1,6 @@
+{
+  "parent": "simplemagic:custom/summoncircle",
+  "textures": {
+    "top": "simplemagic:blocks/summoncircleedge"
+  }
+}

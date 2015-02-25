@@ -5,14 +5,13 @@ import net.minecraft.block.material.Material;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.person124.sm.SimpleMagic;
 import com.person124.sm.block.BlockBasic;
 import com.person124.sm.item.ItemArmorMinor;
 import com.person124.sm.item.ItemBasic;
 import com.person124.sm.item.ItemFragorSword;
-
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Fragor {
 

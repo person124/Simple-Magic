@@ -55,9 +55,6 @@ tile.fireblock.name=Fire Dust Block
 tile.firegemblock.name=Block of Fire Gems
 
 #Limbo Blocks
-tile.curseddirt.name=Cursed Dirt
-tile.cursedstone.name=Cursed Stone
-tile.cursedlog.name=Cursed Log
 tile.limboblock.name=Limbo Dust Block
 
 #Life Blocks

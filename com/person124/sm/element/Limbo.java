@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.person124.sm.SimpleMagic;
 import com.person124.sm.block.BlockBasic;
@@ -15,8 +16,6 @@ import com.person124.sm.item.ItemArmorAlmighty;
 import com.person124.sm.item.ItemBasic;
 import com.person124.sm.item.ItemLimboPearl;
 import com.person124.sm.item.ItemLimboSpade;
-
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Limbo {
 
@@ -28,9 +27,7 @@ public class Limbo {
 	public static final Item LIMBO_SPADE = new ItemLimboSpade(LIMBO_TOOL_MATERIAL, "limbospade");
 	public static final Item LIMBO_LEGGINGS = new ItemArmorAlmighty(SimpleMagic.ELEMENT_ALMIGHTY_ARMOR_MATERIAL, 2, "limboarmor");
 
-	public static final Block CURSED_DIRT = new BlockCursed("curseddirt", 0);
-	public static final Block CURSED_STONE = new BlockCursed("cursedstone", 1);
-	public static final Block CURSED_LOG = new BlockCursed("cursedlog", 2);
+	public static final Block CURSED_BLOCK = new BlockCursed("cursedblock");
 	public static final Block LIMBO_BLOCK = new BlockBasic(Material.cactus, "limboblock", 3.0F, Block.soundTypeGravel, "pickaxe", 2);
 
 	public static void init() {
@@ -40,9 +37,7 @@ public class Limbo {
 		SimpleMagic.registerItem(LIMBO_SPADE);
 		SimpleMagic.registerItem(LIMBO_LEGGINGS);
 
-		SimpleMagic.registerBlock(CURSED_DIRT);
-		SimpleMagic.registerBlock(CURSED_STONE);
-		SimpleMagic.registerBlock(CURSED_LOG);
+		SimpleMagic.registerBlock(CURSED_BLOCK);
 		SimpleMagic.registerBlock(LIMBO_BLOCK);
 
 		GameRegistry.addSmelting(LIMBO_BLOCK, new ItemStack(LIMBO_INGOT, 1), 0.24F);

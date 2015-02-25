@@ -3,7 +3,6 @@ package com.person124.sm.model;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.MathHelper;
 
 public class ModelLimboSage extends ModelBase {
 	// fields
@@ -80,6 +79,7 @@ public class ModelLimboSage extends ModelBase {
 		this.head.rotateAngleY = par4 / (180F / (float) Math.PI);
 		this.head.rotateAngleX = par5 / (180F / (float) Math.PI);
 
+		/*
 		float var8;
 
 		if (this.onGround > -9990.0F) {
@@ -103,6 +103,7 @@ public class ModelLimboSage extends ModelBase {
 			this.rightleg.rotateAngleY += 0.01F;
 			this.rightleg.rotateAngleZ += 0.01F;
 		}
+		*/
 
 		if (this.isSneak) {
 			this.body.rotateAngleX = 0.5F;
